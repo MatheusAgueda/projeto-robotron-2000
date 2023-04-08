@@ -54,7 +54,23 @@ main {
     line-height: 0.8;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    color: rgba(255, 255, 255, 0.8)
+    -webkit-text-stroke: 3px #ffe600;
+    animation: text-color 2s linear infinite;
+    border-image: linear-gradient(to bottom, #ffe600, #f0f) 1 100%;
+}
+
+@keyframes text-color {
+    0% {
+        color: #ffe600;
+    }
+
+    50% {
+        color: #f0f;
+    }
+
+    100% {
+        color: #ffe600;
+    }
 }
 
 .box {
@@ -62,7 +78,21 @@ main {
     clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
     border: 5px solid transparent;
     height: 84%;
-    border-image: linear-gradient(to bottom, #ffe600, #f0f) 1 100%;
+    animation: border-gradient 2s linear infinite;
+}
+
+@keyframes border-gradient {
+    0% {
+        border-image: linear-gradient(to bottom, #ffe600, #f0f) 1 100%;
+    }
+
+    50% {
+        border-image: linear-gradient(to bottom, #f0f, #ffe600) 1 100%;
+    }
+
+    100% {
+        border-image: linear-gradient(to bottom, #ffe600, #f0f) 1 100%;
+    }
 }
 
 /****************************** Equipamentos *****/
@@ -138,18 +168,20 @@ main {
     text-transform: uppercase;
     padding: 0.2em 1em;
     float: right;
-    border: 3px solid var(--main-branco);
+    border: 5px solid transparent;
     background: var(--main-branco);
-    clip-path: polygon(100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 0);
+    clip-path: none;
     cursor: pointer;
+    animation: border-gradient 2s linear infinite;
+    border-image: linear-gradient(to bottom, #ffe600, #f0f) 1 100%;
+    border-radius: 0;
 }
 
 .producao:hover {
     background: var(--main-preto);
-    color: var(--main-branco)
+    color: var(--main-branco);
+    border-color: var(--main-preto);
 }
-
-
 
 /****************************** Estatísticas *****/
 .estatisticas {
