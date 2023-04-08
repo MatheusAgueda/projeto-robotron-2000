@@ -1,4 +1,4 @@
-const controle = document.querySelector("[data-controle]")
+const controle = document.querySelectorAll("[data-controle]")
 const estatistica = document.querySelectorAll("[data-estatistica]")
 
 const pecas = {
